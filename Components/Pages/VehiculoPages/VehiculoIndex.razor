@@ -4,105 +4,46 @@
 
 <style>
 
+    /* ========================================
+       PÁGINA
+       ======================================== */
+
     .pagina {
         display: flex;
         min-height: 100vh;
+        width: 100%;
         background-color: #f5f7fa;
         font-family: Arial, sans-serif;
     }
 
-    /* MENÚ LATERAL */
-    .sidebar {
-        width: 250px;
-        background-color: #101a2d;
-        color: white;
-        padding: 20px 15px;
-    }
 
-    .logo {
-        font-size: 17px;
-        font-weight: bold;
-        margin-bottom: 3px;
-    }
+    /* ========================================
+       CONTENIDO PRINCIPAL
+       ======================================== */
 
-    .subtitulo {
-        font-size: 9px;
-        color: #d0d5df;
-        margin-bottom: 25px;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .menu-item {
-        padding: 11px 12px;
-        border-radius: 6px;
-        color: #d8deea;
-        text-decoration: none;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .menu-item:hover {
-        background-color: #1d2a43;
-        color: white;
-    }
-
-    .menu-item.activo {
-        background-color: #2864e8;
-        color: white;
-    }
-
-    .usuario {
-        margin-top: 30px;
-        border-top: 1px solid #273249;
-        padding-top: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .avatar {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background-color: #bd8a6c;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-    }
-
-    .usuario-nombre {
-        font-size: 12px;
-        font-weight: bold;
-    }
-
-    .usuario-tipo {
-        font-size: 10px;
-        color: #aeb7c7;
-    }
-
-
-    /* CONTENIDO */
     .contenido {
-        flex: 1;
+        width: 100%;
+        min-width: 0;
         padding: 0;
     }
 
+
+    /* ========================================
+       BARRA SUPERIOR
+       ======================================== */
+
     .barra-superior {
         height: 60px;
+        width: 100%;
         background-color: white;
         border-bottom: 1px solid #e2e6ec;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         padding: 0 25px;
+        box-sizing: border-box;
     }
 
     .titulo {
@@ -114,10 +55,14 @@
     .busqueda {
         width: 180px;
         height: 32px;
+
         border: none;
         background-color: #f1f4f8;
+
         border-radius: 6px;
+
         padding: 0 12px;
+
         font-size: 11px;
     }
 
@@ -126,11 +71,20 @@
         font-size: 18px;
     }
 
+
+    /* ========================================
+       CONTENIDO
+       ======================================== */
+
     .contenido-principal {
         padding: 20px;
     }
 
-    /* BOTONES */
+
+    /* ========================================
+       BOTONES
+       ======================================== */
+
     .acciones {
         display: flex;
         gap: 10px;
@@ -140,72 +94,114 @@
     .btn-agregar {
         background-color: #2864e8;
         color: white;
+
         border: none;
         border-radius: 6px;
+
         padding: 9px 14px;
+
         font-size: 12px;
+
         cursor: pointer;
+    }
+
+    .btn-agregar:hover {
+        background-color: #1f56d0;
     }
 
     .btn-exportar {
         background-color: white;
+
         border: 1px solid #dce1e8;
         border-radius: 6px;
+
         padding: 9px 14px;
+
         font-size: 12px;
+
         cursor: pointer;
     }
 
+    .btn-exportar:hover {
+        background-color: #f5f6f8;
+    }
 
-    /* FILTROS */
+
+    /* ========================================
+       FILTROS
+       ======================================== */
+
     .filtros {
         background-color: white;
+
         border: 1px solid #e1e5eb;
         border-radius: 8px;
+
         padding: 14px;
+
         display: grid;
+
         grid-template-columns: repeat(4, 1fr);
+
         gap: 12px;
+
         margin-bottom: 20px;
     }
 
     .filtro label {
         display: block;
+
         font-size: 10px;
+
         color: #4f5b6d;
+
         margin-bottom: 6px;
     }
 
     .filtro select {
         width: 100%;
         height: 34px;
+
         border: 1px solid #dce1e8;
         border-radius: 5px;
+
         padding: 0 8px;
+
         font-size: 11px;
+
         color: #364052;
+
         background-color: white;
     }
 
 
-    /* TARJETAS */
+    /* ========================================
+       TARJETAS DE VEHÍCULOS
+       ======================================== */
+
     .vehiculos {
         display: grid;
+
         grid-template-columns: repeat(3, 1fr);
+
         gap: 35px;
     }
 
     .vehiculo {
         background-color: white;
+
         border: 1px solid #dfe3e9;
         border-radius: 5px;
+
         overflow: hidden;
     }
 
     .imagen-vehiculo {
         width: 100%;
         height: 165px;
+
         object-fit: cover;
+
         display: block;
     }
 
@@ -215,45 +211,59 @@
 
     .datos {
         display: flex;
+
         justify-content: space-between;
         align-items: center;
+
         margin-bottom: 7px;
     }
 
     .marca {
         font-size: 11px;
+
         font-weight: bold;
+
         color: #202938;
     }
 
     .ano {
         font-size: 10px;
+
         color: #586274;
+
         margin-left: 8px;
     }
 
     .precio {
         font-size: 11px;
+
         font-weight: bold;
+
         color: #111827;
     }
 
     .parte-inferior {
         display: flex;
+
         justify-content: space-between;
         align-items: center;
     }
 
     .disponible {
         background-color: #d8f8e5;
+
         color: #19a55a;
+
         border-radius: 4px;
+
         padding: 4px 8px;
+
         font-size: 9px;
     }
 
     .botones {
         display: flex;
+
         gap: 5px;
     }
 
@@ -261,127 +271,87 @@
     .btn-eliminar {
         width: 25px;
         height: 25px;
+
         border: none;
+
         border-radius: 4px;
+
         cursor: pointer;
     }
 
     .btn-editar {
         background-color: #edf1f6;
+
         color: #43536b;
+    }
+
+    .btn-editar:hover {
+        background-color: #dfe5ed;
     }
 
     .btn-eliminar {
         background-color: #ffe1e1;
+
         color: #f44343;
     }
 
+    .btn-eliminar:hover {
+        background-color: #ffd1d1;
+    }
 
-    /* RESPONSIVE */
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+
     @@media (max-width: 1000px) {
 
-    .sidebar {
-        width: 200px;
+        .vehiculos {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .filtros {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
     }
 
-    .vehiculos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .filtros {
-        grgit branchid-template-columns: repeat(2, 1fr);
-    }
-}
 
     @@media (max-width: 700px) {
 
-    .sidebar {
-        display: none;
-    }
+        .vehiculos {
+            grid-template-columns: 1fr;
+        }
 
-    .vehiculos {
-        grid-template-columns: 1fr;
-    }
+        .filtros {
+            grid-template-columns: 1fr;
+        }
 
-    .filtros {
-        grid-template-columns: 1fr;
+        .barra-superior {
+            padding: 0 15px;
+        }
+
+        .busqueda {
+            width: 140px;
+        }
+
+        .contenido-principal {
+            padding: 15px;
+        }
+
     }
-}
 
 </style>
 
 
 <div class="pagina">
 
-    <!-- MENÚ LATERAL -->
-    <aside class="sidebar">
-
-        <div class="logo">
-            D'León y Asociados
-        </div>
-
-        <div class="subtitulo">
-            ÁREA DE SEGURO DE VEHÍCULOS
-        </div>
-
-        <nav class="menu">
-
-            <a class="menu-item" href="/">
-                🏠 Inicio
-            </a>
-
-            <a class="menu-item activo" href="/vehiculos">
-                🚗 Vehículos
-            </a>
-
-            <a class="menu-item" href="#">
-                👤 Clientes
-            </a>
-
-            <a class="menu-item" href="#">
-                ⚙ Repuestos
-            </a>
-
-            <a class="menu-item" href="#">
-                🔧 Mantenimiento
-            </a>
-
-            <a class="menu-item" href="#">
-                🏢 Proveedores
-            </a>
-
-            <a class="menu-item" href="#">
-                📊 Reportes
-            </a>
-
-        </nav>
-
-
-        <div class="usuario">
-
-            <div class="avatar">
-                JP
-            </div>
-
-            <div>
-                <div class="usuario-nombre">
-                    Juan Perez
-                </div>
-
-                <div class="usuario-tipo">
-                    Administrador
-                </div>
-            </div>
-
-        </div>
-
-    </aside>
-
-
-    <!-- CONTENIDO -->
     <main class="contenido">
 
-        <!-- BARRA SUPERIOR -->
+        <!-- ========================================
+             BARRA SUPERIOR
+             ======================================== -->
+
         <header class="barra-superior">
 
             <div class="titulo">
@@ -405,7 +375,10 @@
         <div class="contenido-principal">
 
 
-            <!-- BOTONES -->
+            <!-- ========================================
+                 BOTONES
+                 ======================================== -->
+
             <div class="acciones">
 
                 <button class="btn-agregar">
@@ -419,18 +392,36 @@
             </div>
 
 
-            <!-- FILTROS -->
+            <!-- ========================================
+                 FILTROS
+                 ======================================== -->
+
             <div class="filtros">
 
                 <div class="filtro">
 
-                    <label>Marca</label>
+                    <label>
+                        Marca
+                    </label>
 
                     <select>
-                        <option>Todas las marcas</option>
-                        <option>Toyota</option>
-                        <option>BMW</option>
-                        <option>Kia</option>
+
+                        <option>
+                            Todas las marcas
+                        </option>
+
+                        <option>
+                            Toyota
+                        </option>
+
+                        <option>
+                            BMW
+                        </option>
+
+                        <option>
+                            Kia
+                        </option>
+
                     </select>
 
                 </div>
@@ -438,12 +429,24 @@
 
                 <div class="filtro">
 
-                    <label>Estado</label>
+                    <label>
+                        Estado
+                    </label>
 
                     <select>
-                        <option>Disponible / Reservado</option>
-                        <option>Disponible</option>
-                        <option>Reservado</option>
+
+                        <option>
+                            Disponible / Reservado
+                        </option>
+
+                        <option>
+                            Disponible
+                        </option>
+
+                        <option>
+                            Reservado
+                        </option>
+
                     </select>
 
                 </div>
@@ -451,12 +454,24 @@
 
                 <div class="filtro">
 
-                    <label>Rango de Año</label>
+                    <label>
+                        Rango de Año
+                    </label>
 
                     <select>
-                        <option>2020 - 2027</option>
-                        <option>2020 - 2023</option>
-                        <option>2024 - 2027</option>
+
+                        <option>
+                            2020 - 2027
+                        </option>
+
+                        <option>
+                            2020 - 2023
+                        </option>
+
+                        <option>
+                            2024 - 2027
+                        </option>
+
                     </select>
 
                 </div>
@@ -464,13 +479,28 @@
 
                 <div class="filtro">
 
-                    <label>Rango de Precio</label>
+                    <label>
+                        Rango de Precio
+                    </label>
 
                     <select>
-                        <option>Cualquier precio</option>
-                        <option>Menos de $30,000</option>
-                        <option>$30,000 - $60,000</option>
-                        <option>Más de $60,000</option>
+
+                        <option>
+                            Cualquier precio
+                        </option>
+
+                        <option>
+                            Menos de $30,000
+                        </option>
+
+                        <option>
+                            $30,000 - $60,000
+                        </option>
+
+                        <option>
+                            Más de $60,000
+                        </option>
+
                     </select>
 
                 </div>
@@ -478,11 +508,15 @@
             </div>
 
 
-            <!-- VEHÍCULOS -->
+            <!-- ========================================
+                 VEHÍCULOS
+                 ======================================== -->
+
             <div class="vehiculos">
 
 
                 <!-- TOYOTA HILUX -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
@@ -494,13 +528,23 @@
                         <div class="datos">
 
                             <div>
-                                <span class="marca">Toyota Hilux</span>
-                                <span class="ano">2027</span>
+
+                                <span class="marca">
+                                    Toyota Hilux
+                                </span>
+
+                                <span class="ano">
+                                    2027
+                                </span>
+
                             </div>
 
-                            <span class="precio">$84,000</span>
+                            <span class="precio">
+                                $84,000
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -510,12 +554,17 @@
 
                             <div class="botones">
 
-                                <button class="btn-editar">
+                                <button class="btn-editar"
+                                        @onclick="AbrirModal">
+
                                     ✎
+
                                 </button>
 
                                 <button class="btn-eliminar">
+
                                     🗑
+
                                 </button>
 
                             </div>
@@ -528,6 +577,7 @@
 
 
                 <!-- TOYOTA 4RUNNER -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
@@ -539,13 +589,23 @@
                         <div class="datos">
 
                             <div>
-                                <span class="marca">Toyota 4Runner</span>
-                                <span class="ano">2025</span>
+
+                                <span class="marca">
+                                    Toyota 4Runner
+                                </span>
+
+                                <span class="ano">
+                                    2025
+                                </span>
+
                             </div>
 
-                            <span class="precio">$70,000</span>
+                            <span class="precio">
+                                $70,000
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -572,25 +632,36 @@
                 </div>
 
 
-                @*TOYOTA TACOMA*@
+                <!-- TOYOTA TACOMA -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
-                        src="/images/vehiculos/toyota-tacoma.jpg"
-                        alt="Toyota Tacoma" />
+                         src="/images/vehiculos/toyota-tacoma.WEBP"
+                         alt="Toyota Tacoma" />
 
                     <div class="informacion">
 
                         <div class="datos">
 
                             <div>
-                                <span class="marca">Toyota Tacoma</span>
-                                <span class="ano">2022</span>
+
+                                <span class="marca">
+                                    Toyota Tacoma
+                                </span>
+
+                                <span class="ano">
+                                    2022
+                                </span>
+
                             </div>
 
-                            <span class="precio">$38,900</span>
+                            <span class="precio">
+                                $38,900
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -617,25 +688,36 @@
                 </div>
 
 
-                @*TOYOTA COROLLA*@
+                <!-- TOYOTA COROLLA -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
-                        src="/images/vehiculos/toyota-corolla.jpg"
-                        alt="Toyota Corolla" />
+                         src="/images/vehiculos/toyota-corolla.WEBP"
+                         alt="Toyota Corolla" />
 
                     <div class="informacion">
 
                         <div class="datos">
 
                             <div>
-                                <span class="marca">Toyota Corolla</span>
-                                <span class="ano">2023</span>
+
+                                <span class="marca">
+                                    Toyota Corolla
+                                </span>
+
+                                <span class="ano">
+                                    2023
+                                </span>
+
                             </div>
 
-                            <span class="precio">$25,500</span>
+                            <span class="precio">
+                                $25,500
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -662,25 +744,36 @@
                 </div>
 
 
-                @*BMW X7*@
+                <!-- BMW X7 -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
-                        src="/images/vehiculos/bmw-x7.jpg"
-                        alt="BMW X7" />
+                         src="/images/vehiculos/bmw-x7.jpg"
+                         alt="BMW X7" />
 
                     <div class="informacion">
 
                         <div class="datos">
 
                             <div>
-                                <span class="marca">BMW X7</span>
-                                <span class="ano">2023</span>
+
+                                <span class="marca">
+                                    BMW X7
+                                </span>
+
+                                <span class="ano">
+                                    2023
+                                </span>
+
                             </div>
 
-                            <span class="precio">$115,200</span>
+                            <span class="precio">
+                                $115,200
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -707,25 +800,36 @@
                 </div>
 
 
-                @*KIA K5*@
+                <!-- KIA K5 -->
+
                 <div class="vehiculo">
 
                     <img class="imagen-vehiculo"
-                        src="/images/vehiculos/kia-k5.jpg"
-                        alt="Kia K5" />
+                         src="/images/vehiculos/kia-k5.jpeg"
+                         alt="Kia K5" />
 
                     <div class="informacion">
 
                         <div class="datos">
 
                             <div>
-                                <span class="marca">Kia K5</span>
-                                <span class="ano">2023</span>
+
+                                <span class="marca">
+                                    Kia K5
+                                </span>
+
+                                <span class="ano">
+                                    2023
+                                </span>
+
                             </div>
 
-                            <span class="precio">$15,000</span>
+                            <span class="precio">
+                                $15,000
+                            </span>
 
                         </div>
+
 
                         <div class="parte-inferior">
 
@@ -760,25 +864,35 @@
 
 </div>
 
-<VehiculoDetalleModal 
+
+<!-- ========================================
+     MODAL DE DETALLE
+     ======================================== -->
+
+<VehiculoDetalleModal
     Visible="@MostrarModal"
-    VisibleChanged="@(valor => MostrarModal = valor)"
+    VisibleChanged="@ModalCerrado"
     Marca="Toyota"
     Modelo="Hilux"
     Anio="2027"
     Estado="Disponible"
     Descripcion="La Toyota Hilux Travo-e 2027 es una camioneta pick-up 100% eléctrica (BEV) que maximiza la resistencia tradicional de la línea Hilux con tecnología de movilidad sostenible." />
 
-    @code{
-        private bool MostrarModal = false;
 
-        private void AbrirModal()
-        {
-            MostrarModal = true;
-        }
-        
-        private void ModalCerrado(bool valor)
-        {
-            MostrarModal = valor;
-        }
+@code {
+
+    private bool MostrarModal = false;
+
+
+    private void AbrirModal()
+    {
+        MostrarModal = true;
     }
+
+
+    private void ModalCerrado(bool valor)
+    {
+        MostrarModal = valor;
+    }
+
+}
