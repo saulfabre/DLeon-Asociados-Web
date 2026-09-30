@@ -1,0 +1,67 @@
+@page "/login"
+
+@rendermode InteractiveServer
+
+<div class="container">
+
+    @*Header*@
+    <header class="login-header">
+        @*Logo*@
+        <a class="login-logo-link" href="/">
+            <img class="site-logo" src="" alt="D'Leon Asociados" />
+        </a>
+
+        @*Enlace para volver al inicio*@
+        <a class="login-back" href="/">Volver al inicio</a>
+    </header>
+
+    @*Contenido principal*@
+    <main class="login-main">
+        <div class="login-box">
+
+            @*Título del login*@
+            <h1 class="login-title">
+                Inicia sesión para encontrar tu próximo vehículo.
+            </h1>
+
+            @*Campo de correo electrónico*@
+            <div class="field">
+                <label class="field-label" for="email">Correo electrónico*</label>
+                <input id="email" class="field-input" type="email" placeholder="" autocomplete="email" />
+            </div>
+
+            @*Campo de contraseña*@
+            <div class="field">
+                <label class="field-label" for="password">Contraseña*</label>
+                <input id="password" class="field-input" type="password" placeholder="  " />
+            </div>
+
+            @*Enlace para recuperar la contraseña*@
+            <a class="login-forgot" href="">¿Olvidaste tu contraseña?</a>
+
+            @*Texto legal*@
+            <p class="login-legal">
+                Al continuar, acepto la
+                <a href="">Política de Privacidad</a>
+                y los
+                <a href="">Términos de Uso</a>
+                de D'Leon Asociados.
+            </p>
+
+            @*Botón para iniciar sesión*@
+            <a href="/dashboard">
+            <div class="login-actions">
+                <button class="login-button" type="button">Iniciar sesión</button>
+            </div>
+            </a>
+
+            @*Enlace para registrarse*@
+            <p class="login-register">
+                ¿Aún no tienes cuenta?
+                <a href="">Regístrate</a>
+            </p>
+
+        </div>
+    </main>
+
+</div>

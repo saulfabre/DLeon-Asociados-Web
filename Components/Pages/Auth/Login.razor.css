@@ -1,0 +1,124 @@
+.container {
+    background: white;
+    color: black;
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+}
+
+.site-logo {
+    height: 40px;
+    width: auto;
+}
+
+.login-back {
+    color: gray;
+    text-decoration: underline;
+}
+
+.login-back:hover {
+    color: black;
+}
+
+.login-main {
+    display: flex;
+    justify-content: center;
+    padding: 32px 24px 96px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 460px;
+}
+
+.login-title {
+    margin: 0 0 40px;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 6px;
+    color: gray;
+}
+
+.field-input {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.field-input:hover {
+    border-color: black;
+}
+
+.login-forgot {
+    color: gray;
+    text-decoration: underline;
+}
+
+.login-forgot:hover {
+    color: black;
+}
+
+.login-legal {
+    margin: 28px 0 0;
+    color: gray;
+    line-height: 1.6;
+}
+
+.login-legal a {
+    color: gray;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.login-legal a:hover {
+    color: black;
+}
+
+.login-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 36px;
+}
+
+.login-button {
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: rgb(63, 63, 63);
+}
+
+.login-register {
+    margin: 32px 0 0;
+    color: gray;
+    text-align: right;
+}
+
+.login-register a {
+    color: black;
+    font-weight: 600;
+    text-decoration: underline;
+}
