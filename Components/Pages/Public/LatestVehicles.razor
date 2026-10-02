@@ -1,0 +1,114 @@
+@* Seccion de ultimos vehiculos *@
+<section class="latest-section">
+    @* Encabezado *@
+    <div class="latest-heading">
+        <span class="latest-title-line"></span>
+        <h2 class="latest-title">Últimos Vehículos</h2>
+    </div>
+
+    @* Tarjetas de vehiculos *@
+    <div class="latest-vehicles-grid">
+        @foreach (var vehicle in Vehicles)
+        {
+            <article class="vehicle-card">
+                @* Imagen y etiquetas *@
+                <div class="vehicle-image-container">
+                    <img class="vehicle-image" src="@vehicle.Imagen" alt="@vehicle.Nombre" />
+                    <span class="vehicle-tag vehicle-type">@vehicle.Tipo</span>
+                    <span class="vehicle-tag vehicle-year">@vehicle.Anio</span>
+                </div>
+
+                @* Indicador de imagen *@
+                <div class="vehicle-carousel-indicator" aria-hidden="true">
+                    <span class="vehicle-carousel-active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                @* Informacion principal *@
+                <div class="vehicle-content">
+                    <h3 class="vehicle-name">@vehicle.Nombre</h3>
+                    <p class="vehicle-price">@vehicle.Precio</p>
+
+                    @* Especificaciones *@
+                    <div class="vehicle-specs">
+                        <div class="vehicle-spec">
+                            <svg class="vehicle-spec-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3c-2.5 3.2-5 6.1-5 10a5 5 0 0 0 10 0c0-3.9-2.5-6.8-5-10Z" />
+                            </svg>
+                            <span class="vehicle-spec-label">Combustible</span>
+                            <strong>@vehicle.Combustible</strong>
+                        </div>
+
+                        <div class="vehicle-spec">
+                            <svg class="vehicle-spec-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="8" />
+                                <path d="M12 7v5l3 2" />
+                            </svg>
+                            <span class="vehicle-spec-label">Millaje</span>
+                            <strong>@vehicle.Millaje</strong>
+                        </div>
+
+                        <div class="vehicle-spec">
+                            <svg class="vehicle-spec-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="7" y="3" width="10" height="18" rx="2" />
+                                <path d="M10 7h4M10 11h4M10 15h4M10 19h4" />
+                            </svg>
+                            <span class="vehicle-spec-label">Transmisión</span>
+                            <strong>@vehicle.Transmision</strong>
+                        </div>
+                    </div>
+
+                    @* Acciones *@
+                    <div class="vehicle-actions">
+                        <a class="vehicle-link" href="/vehiculos">
+                            VER DETALLES
+                            <span aria-hidden="true">→</span>
+                        </a>
+                        <button class="vehicle-favorite" type="button" aria-label="Agregar @vehicle.Nombre a favoritos">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.1a4.8 4.8 0 0 1 8.8 2.7Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</section>
+
+@code {
+    private readonly List<VehicleItem> Vehicles = new()
+    {
+        new VehicleItem("Toyota", "Jeepeta", 2023, "Toyota Corolla", "USD$ 25,500.00", "Gasolina", "32,400 km", "Automática", "/images/vehiculos/toyota-corolla.webp"),
+        new VehicleItem("BMW", "Jeepeta", 2023, "BMW X7", "USD$ 115,200.00", "Gasolina", "18,200 km", "Automática", "/images/vehiculos/bmw-x7.jpg"),
+        new VehicleItem("Kia", "Sedán", 2023, "Kia K5", "USD$ 15,000.00", "Gasolina", "41,600 km", "Automática", "/images/vehiculos/kia-k5.jpeg")
+    };
+
+    private sealed class VehicleItem
+    {
+        public VehicleItem(string marca, string tipo, int anio, string nombre, string precio, string combustible, string millaje, string transmision, string imagen)
+        {
+            Marca = marca;
+            Tipo = tipo;
+            Anio = anio;
+            Nombre = nombre;
+            Precio = precio;
+            Combustible = combustible;
+            Millaje = millaje;
+            Transmision = transmision;
+            Imagen = imagen;
+        }
+
+        public string Marca { get; }
+        public string Tipo { get; }
+        public int Anio { get; }
+        public string Nombre { get; }
+        public string Precio { get; }
+        public string Combustible { get; }
+        public string Millaje { get; }
+        public string Transmision { get; }
+        public string Imagen { get; }
+    }
+}
