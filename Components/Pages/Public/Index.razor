@@ -3,43 +3,58 @@
 @rendermode InteractiveServer
 
 <div class="container">
-    @*Header*@
+
+    @* Header *@
     <header class="header">
-        @*Logo*@
+
+        @* Logo *@
         <a href="/">
-            <img src="/images/bwm-2.svg">
+            <img src="/images/bwm-2.svg" />
         </a>
 
-        @*Navegación de la página...*@
+        @* Navegación de la página *@
         <nav class="nav-bar">
-            <a href="">Inicio</a>
-            <a href="">Vehículos</a>
-            <a href="">Nosotros</a>
-            <a href="">Contáctanos</a>
+            <a href="/">Inicio</a>
+            <a href="/vehiculos">Vehículos</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/contactanos">Contáctanos</a>
         </nav>
 
-        @*Botón para navegar a login*@
-        <a class="login-button" href="/login">Acceso</a>
+        @* Botón para navegar a login *@
+        <a class="login-button" href="/login">
+            Acceso
+        </a>
+
     </header>
 
     <div class="hero-section">
-        @*Background*@
-        <img class="hero-background" src="/images/index_images/1.jpg" />
+
+        @* Background *@
+        <img class="hero-background"
+             src="/images/index_images/1.jpg" />
 
         <div class="hero-content">
-            @*Titulo del hero*@
+
+            @* Título del hero *@
             <h1 class="hero-title">
                 D' LEON <br />
                 ASOCIADOS
             </h1>
 
-            @*Párrafo del hero*@
+            @* Párrafo del hero *@
             <p>
-                Disfruta de la facilidad de encontrar y adquirir el vehículo <br /> perfecto.
+                Disfruta de la facilidad de encontrar y adquirir el vehículo
+                <br />
+                perfecto.
             </p>
 
-            @*Botón para navegar a Vehículos*@
-            <a class="hero-button" href="">Ver vehículos</a>
+            @* Botón para navegar a Vehículos *@
+            <a class="hero-button" href="/vehiculos">
+                Ver vehículos
+            </a>
+
         </div>
+
     </div>
+
 </div>

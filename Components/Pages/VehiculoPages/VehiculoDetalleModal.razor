@@ -17,7 +17,7 @@
                 <div class="galeria">
 
                     <img class="imagen-principal"
-                         src="@Imagenes[ImagenActual]"
+                        src="@ImagenesActuales[ImagenActual]"
                          alt="@Modelo" />
 
                     <!-- FLECHA IZQUIERDA -->
@@ -36,7 +36,7 @@
                     <!-- INDICADORES -->
                     <div class="indicadores">
 
-                        @for (int i = 0; i < Imagenes.Length; i++)
+                        @for (int i = 0; i < ImagenesActuales.Length; i++)
                         {
                             int indice = i;
 
@@ -169,6 +169,12 @@
     public string Descripcion { get; set; } =
         "Descripción La Toyota Hilux Travo-e 2027 es una camioneta pick-up 100% eléctrica (BEV) que maximiza la resistencia tradicional de la línea Hilux con tecnología de movilidad sostenible.";
 
+    [Parameter]
+    public string ImagenPrincipal { get; set; } = "/images/vehiculos/toyota-hilux.jpg";
+
+    [Parameter]
+    public string[] Imagenes { get; set; } = Array.Empty<string>();
+
     
     /*
      * IMÁGENES DEL VEHÍCULO
@@ -178,24 +184,28 @@
      * wwwroot/images/vehiculos/
      */
 
-    private string[] Imagenes =
-    {
-        "/images/vehiculos/toyota-hilux.jpg",
-        "/images/vehiculos/toyota-hilux-frente.jpeg",
-        "/images/vehiculos/toyota-hilux-lateral.jpeg",
-        "/images/vehiculos/toyota-hilux-trasera.jpeg",
-        "/images/vehiculos/toyota-hilux-interior.jpeg"
-    };
+    private string[] ImagenesActuales = Array.Empty<string>();
 
 
     private int ImagenActual = 0;
+
+    protected override void OnParametersSet()
+    {
+        ImagenesActuales = Imagenes.Length > 0
+            ? Imagenes
+            : string.IsNullOrWhiteSpace(ImagenPrincipal)
+                ? new[] { "/images/vehiculos/toyota-hilux.jpg" }
+                : new[] { ImagenPrincipal };
+
+        ImagenActual = 0;
+    }
 
 
     private void ImagenSiguiente()
     {
         ImagenActual++;
 
-        if (ImagenActual >= Imagenes.Length)
+        if (ImagenActual >= ImagenesActuales.Length)
         {
             ImagenActual = 0;
         }
@@ -208,7 +218,7 @@
 
         if (ImagenActual < 0)
         {
-            ImagenActual = Imagenes.Length - 1;
+            ImagenActual = ImagenesActuales.Length - 1;
         }
     }
 

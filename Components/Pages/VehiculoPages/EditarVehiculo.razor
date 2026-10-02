@@ -1,0 +1,144 @@
+@page "/vehiculo/editar"
+
+<PageTitle>Editar Vehículo | D'Leon Asociados</PageTitle>
+
+<div class="editar-vehiculo-page">
+    @* Sidebar *@
+    <aside class="sidebar sidebar-dark sidebar-narrow-unfoldable border-end">
+        @* Logo *@
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <img src="/images/bmw-2.svg" height="32" alt="D'Leon Asociados" />
+            </div>
+        </div>
+
+        @* Menú del sidebar *@
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">
+                    <i class="nav-icon cil-home"></i>
+                    Inicio
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/vehiculos">
+                    <i class="nav-icon cil-car-alt"></i>
+                    Vehículos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/vehiculos">
+                    <i class="nav-icon cil-people"></i>
+                    Clientes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="nav-icon cil-basket"></i>
+                    Repuestos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="nav-icon cil-wrench"></i>
+                    Mantenimiento
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="nav-icon cil-briefcase"></i>
+                    Proveedores
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="nav-icon cil-chart"></i>
+                    Reportes
+                </a>
+            </li>
+        </ul>
+
+        @* Usuario *@
+        <div class="sidebar-footer">
+            <div class="dropdown dropend w-100">
+                <a class="btn btn-ghost w-100 d-flex gap-2 p-1 align-items-center"
+                   href=""
+                   role="button"
+                   data-coreui-toggle="dropdown"
+                   aria-expanded="false">
+                    <div class="avatar avatar-md bg-dark text-white rounded">A</div>
+                    <div class="small text-start d-sidebar-narrow-none">
+                        <div class="fw-semibold">Administrador</div>
+                        <div>admin@dleon.com</div>
+                    </div>
+                    <i class="nav-icon cil-options ms-auto d-sidebar-narrow-none"></i>
+                </a>
+                <ul class="dropdown-menu w-100">
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="">
+                            <i class="cil-user"></i> Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="">
+                            <i class="cil-settings"></i> Configuración
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="">
+                            <i class="cil-account-logout"></i> Cerrar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    @* Contenido de edición *@
+    <main class="editar-vehiculo-content">
+        <header class="editar-vehiculo-header">
+            <h1>Editar Vehículo</h1>
+            <a class="editar-vehiculo-back" href="/vehiculos">Volver al inventario</a>
+        </header>
+
+        @* Formulario *@
+        <section class="editar-vehiculo-card">
+            <h2>Información del vehículo</h2>
+            <div class="editar-vehiculo-form">
+                <label>
+                    Marca
+                    <input type="text" value="Toyota" />
+                </label>
+                <label>
+                    Modelo
+                    <input type="text" value="Hilux" />
+                </label>
+                <label>
+                    Año
+                    <input type="number" value="2027" />
+                </label>
+                <label>
+                    Precio
+                    <input type="number" value="84000" />
+                </label>
+                <label>
+                    Tipo de transmisión
+                    <select>
+                        <option>Automática</option>
+                        <option>Manual</option>
+                    </select>
+                </label>
+                <label>
+                    Kilometraje (km)
+                    <input type="number" value="25000" />
+                </label>
+            </div>
+
+            <div class="editar-vehiculo-actions">
+                <a class="editar-vehiculo-cancel" href="/vehiculos">Cancelar</a>
+                <button class="editar-vehiculo-save" type="button">Guardar cambios</button>
+            </div>
+        </section>
+    </main>
+</div>

@@ -2,7 +2,7 @@
     min-height: 100vh;
     background-color: #f6f8fb;
     color: #172033;
-    font-family: Arial, sans-serif;
+    font-family: inherit;
 }
 
 .header-proveedores {
